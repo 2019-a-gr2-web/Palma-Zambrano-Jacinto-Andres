@@ -10,3 +10,14 @@ export class AppController {
     return this.appService.getHello();
   }
 }
+class usuario{
+  atributoPublico; //Public
+  private atributoPrivado;
+  protected atributoProtegido;
+
+  constructor(atributoPublico, atributoPrivado, atributoProtegido){
+    this.atributoPublico = atributoPublico;
+    this.atributoPrivado = atributoPrivado;
+    this.atributoProtegido = atributoProtegido;
+  }
+}
