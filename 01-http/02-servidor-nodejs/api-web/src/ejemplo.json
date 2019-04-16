@@ -1,0 +1,18 @@
+[{
+  "key" : "value",
+  "nombre" : "Jacinto",
+  "edad": 25,
+  "sueldo": 1.2,
+  "casado": false,
+  "hijos": null,
+  "mascotas" : ["jaqueline",
+    2,
+    1.01,
+    false,
+    null,
+    {
+      "nombre": "motas"
+    }
+  ]
+
+}]
