@@ -49,15 +49,36 @@ export class AppController {
   @Put('/multiplicacion')
   @HttpCode(202)
   multipJPZ(@Query() parametros, @Response() resp){
-  const numA = Number(parametros.numero);
-  const numB = Number(parametros.numero2);
-  const numMult = numA*numB;
-  const salida = numMult.toString();
-    resp.set('Resta',`${salida}`);
-    return resp.status(201).send(`La multiplicacion es: ${numMult}`);
+    if(parametros.numero && parametros.numero2){
+      const numA = Number(parametros.numero);
+      const numB = Number(parametros.numero2);
+      const numMult = numA*numB;
+      const salida = numMult.toString();
+      resp.set('Resta',`${salida}`);
+      return resp.send(`La multiplicacion es: ${numMult}`);
+    }else{
+      return 'NO ENVIA PARAMETROS EN QUERY'
+    }
+
   }
 
 
   //Metodo DELETE - DIVISION
-  
+  @Delete('/division')
+  @HttpCode(203)
+  diviJPZ(@Headers() paramHeader, @Body() paramBody, @Response() resp ){
+  if(paramHeader.numero && paramBody.numero2) {
+    const numA = Number(paramHeader.numero);
+    const numB = Number(paramBody.numero2);
+    if (numB == 0) {
+      return resp.send('EL NUMERO DEBE DE SER DISTINTO DE 0')
+
+    } else {
+      const div = numA / numB;
+      return resp.send(`LA DIVISION ES: ${div}`);
+    }
+  }else{
+    return 'NO ENVIA PARAMETROS EN QUERY O DE BODY'
+  }
+  }
 }
