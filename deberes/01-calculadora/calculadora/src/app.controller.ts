@@ -1,6 +1,5 @@
 import {Controller, Get, Post, HttpCode,Headers,Body,Response, Request, Delete,Put, Query} from '@nestjs/common';
 import { AppService } from './app.service';
-import {response} from "express";
 
 @Controller('/calculadora')
 export class AppController {
@@ -78,7 +77,7 @@ export class AppController {
       return resp.send(`LA DIVISION ES: ${div}`);
     }
   }else{
-    return 'NO ENVIA PARAMETROS EN QUERY O DE BODY'
+    return 'NO ENVIA PARAMETROS EN HEADER O DE BODY'
   }
   }
 }
