@@ -154,6 +154,11 @@ export class AppController {
 
 
  }
+
+  @Get('/inicio')
+  inicio(@Response() res){
+    return res.render('inicio');
+  }
 }
 
 
@@ -211,3 +216,139 @@ objeto.propiedadTres = 'valor3';
 objeto['propiedadTres'] = 'valor3';
 delete objeto.propiedadTres; //-> destruye la propiedad
 objeto.propiedadTres = undefined; // ->destruye la propiedad
+
+
+//FUNCIONES
+function holaMundo() {
+  console.log('Hola mundo - viene desde funcion')
+}
+
+const respuestaholaMundo =holaMundo(); //undefined
+console.log('Resp hola mundo:', respuestaholaMundo)
+
+//FUNCION TIPADA
+function suma(a:number,b:number):number {
+  return a+b;
+}
+const respuestaSuma = suma( 1,2);
+console.log('Resp suma: ',respuestaSuma);
+
+// CONDICIONALES
+//Truty -> true
+//Falsy -> false
+
+if(true){ //Truty
+  console.log('Verdadero')
+}else {
+  console.log('Falso');
+}
+
+  if(false){ //Falsy
+    console.log('Verdadero')
+  }else{
+    console.log('Falso');
+  }
+
+  if(""){ // un string vacio es Falsy
+    console.log('Verdadero ""');
+  }else{
+    console.log('Falso ""');
+  }
+
+if("a"){ // un string con más de un caracter es Truty
+  console.log('Verdadero "a"');
+}else{
+  console.log('Falso "a"');
+}
+
+if(0){ // El 0 en JS es Falsy
+  console.log('Verdadero "a"');
+}else{
+  console.log('Falso "a"');
+}
+
+if(-1){ // El -1 en JS es Truty
+  console.log('Verdadero "-1"');
+}else{
+  console.log('Falso "-1"');
+}
+
+
+if(1){ // El 1 en JS es Truty
+  console.log('Verdadero "1"');
+}else{
+  console.log('Falso "1"');
+}
+
+if(undefined){ // El undefined en JS es Falsy
+  console.log('Verdadero "undfind"');
+}else{
+  console.log('Falso "undfind"');
+}
+
+if(null){ // El null en JS es Falsy
+  console.log('Verdadero "null"');
+}else{
+  console.log('Falso "null"');
+}
+
+//Operadores de Arreglos en JS
+let arreglo:any = [1,'A',true,null,{},[]];
+const arregloNumeros = [1,2,3,4,5,6];
+
+//1) Imprimir en consola todos los elementos
+const arregloNumerosForEach = [1,2,3,4,5,6];
+const rForEach =arregloNumerosForEach.forEach(
+    function (valorActual) {
+      console.log(`Valor: ${valorActual}`);
+    }
+);
+
+const r2ForEach = arregloNumerosForEach.forEach(
+    n => console.log(`${n}`)
+);
+console.log(`RESPUESTA FOREACH: ${rForEach}`);
+console.log(`RESPUESTA FOREACH: ${r2ForEach}`);
+
+//2) Sumar 2 a los pares y 1 a los impares
+const arregloNumerosMap = [1,2,3,4,5,6];
+const rMap = arregloNumerosMap.map( //Devolver el nuevo VALOR de ese elemento
+    (valorActual)=>{
+      const esPar = valorActual%2==0;
+      if(esPar){
+        return valorActual +2;
+      }else{
+        return valorActual +1;
+      }
+
+});
+console.log(`RESPUESTA MAP: ${rMap}`);
+
+//3) Buscar si existe el número 4
+const arregloNumerosFind = [1,2,3,4,5,6];
+
+const rFind = arregloNumerosFind.find(// CONDICION para devolver ese ELEMENTO
+    (valorActual)=>{
+      return valorActual == 4;
+    }
+    );
+console.log(`RESPUESTA FIND: ${rFind}`);
+//4) Filtrar los números menores a 5
+const arregloNumerosFilter = [1,2,3,4,5,6];
+
+const rFilter = arregloNumerosFilter.filter(// COND TRUE -> Agrega al arreglo
+    // COND FALSE -> Se omite del arreglo
+    // Devuelve un nuevo arreglo filtrado
+    (valorActual)=>{
+      return valorActual < 5;
+    }
+);
+console.log(`RESPUESTA FILTER: ${rFilter}`);
+//5) Indicar si TODOS los valores son positivos
+//6) ALGUN valor es menor que 2
+//7) Sumar todos los valores
+//9) Restar todos los valores de 100
+
+// 1.1) Sumar 10 a todos
+// 1.2) Filtrar a los mayores a 15
+// 1.3) Si hay algun numero mayor a 30
