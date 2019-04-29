@@ -14,36 +14,25 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/01-http/02-servidor-nodejs/api-web/src/app.controller.ts">
+        <entry file="file://$PROJECT_DIR$/deberes/01-calculadora/calculadora/src/app.controller.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="345" column="40" selection-start-line="345" selection-start-column="40" selection-end-line="345" selection-end-column="40" />
+            <state relative-caret-position="322">
+              <caret line="89" column="8" lean-forward="true" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="8" />
               <folding>
-                <element signature="e#0#124#0" expanded="true" />
-                <element signature="n#!!block;n#semilla#0;n#AppController#0" />
+                <element signature="e#0#113#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/01-http/02-servidor-nodejs/api-web/src/main.ts">
+        <entry file="file://$PROJECT_DIR$/deberes/01-calculadora/calculadora/src/main.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="207">
-              <caret line="9" column="2" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
-                <element signature="e#133#197#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/01-http/02-servidor-nodejs/api-web/views/inicio.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -66,11 +55,11 @@
         <option value="$PROJECT_DIR$/01-http/02-servidor-nodejs/api-web/src/ejemplo.json" />
         <option value="$PROJECT_DIR$/deberes/01-calculadora/calculadora/.gitignore" />
         <option value="$PROJECT_DIR$/01-http/02-servidor-nodejs/api-web/src/app.controller.spec.ts" />
-        <option value="$PROJECT_DIR$/deberes/01-calculadora/calculadora/src/main.ts" />
-        <option value="$PROJECT_DIR$/deberes/01-calculadora/calculadora/src/app.controller.ts" />
         <option value="$PROJECT_DIR$/01-http/02-servidor-nodejs/api-web/src/main.ts" />
         <option value="$PROJECT_DIR$/01-http/02-servidor-nodejs/api-web/views/inicio.ejs" />
         <option value="$PROJECT_DIR$/01-http/02-servidor-nodejs/api-web/src/app.controller.ts" />
+        <option value="$PROJECT_DIR$/deberes/01-calculadora/calculadora/src/main.ts" />
+        <option value="$PROJECT_DIR$/deberes/01-calculadora/calculadora/src/app.controller.ts" />
       </list>
     </option>
   </component>
@@ -84,6 +73,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -105,23 +95,33 @@
             <path>
               <item name="Palma-Zambrano-Jacinto-Andres" type="b2602c69:ProjectViewProjectNode" />
               <item name="Palma-Zambrano-Jacinto-Andres" type="462c0819:PsiDirectoryNode" />
-              <item name="01-http" type="462c0819:PsiDirectoryNode" />
-              <item name="02-servidor-nodejs" type="462c0819:PsiDirectoryNode" />
-              <item name="api-web" type="462c0819:PsiDirectoryNode" />
+              <item name="deberes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Palma-Zambrano-Jacinto-Andres" type="b2602c69:ProjectViewProjectNode" />
               <item name="Palma-Zambrano-Jacinto-Andres" type="462c0819:PsiDirectoryNode" />
-              <item name="01-http" type="462c0819:PsiDirectoryNode" />
-              <item name="02-servidor-nodejs" type="462c0819:PsiDirectoryNode" />
-              <item name="api-web" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="deberes" type="462c0819:PsiDirectoryNode" />
+              <item name="01-calculadora" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Palma-Zambrano-Jacinto-Andres" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Palma-Zambrano-Jacinto-Andres" type="462c0819:PsiDirectoryNode" />
+              <item name="deberes" type="462c0819:PsiDirectoryNode" />
+              <item name="01-calculadora" type="462c0819:PsiDirectoryNode" />
+              <item name="calculadora" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Palma-Zambrano-Jacinto-Andres" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Palma-Zambrano-Jacinto-Andres" type="462c0819:PsiDirectoryNode" />
+              <item name="deberes" type="462c0819:PsiDirectoryNode" />
+              <item name="01-calculadora" type="462c0819:PsiDirectoryNode" />
+              <item name="calculadora" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -163,17 +163,19 @@
       <workItem from="1555781413007" duration="3131000" />
       <workItem from="1555789828830" duration="8903000" />
       <workItem from="1556045937872" duration="12873000" />
-      <workItem from="1556132842276" duration="6437000" />
+      <workItem from="1556132842276" duration="6579000" />
+      <workItem from="1556491435278" duration="6794000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56636000" />
+    <option name="totallyTimeSpent" value="63572000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.45891473" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.31324404" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -187,7 +189,7 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="9" weight="0.32941177" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3815126" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.20168068" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -260,29 +262,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/deberes/01-calculadora/calculadora/src/main.ts">
+    <entry file="file://$PROJECT_DIR$/01-http/02-servidor-nodejs/api-web/src/app.controller.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+        <state relative-caret-position="-52">
+          <caret line="345" column="40" selection-start-line="345" selection-start-column="40" selection-end-line="345" selection-end-column="40" />
           <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deberes/01-calculadora/calculadora/src/app.controller.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="62" column="18" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#113#0" expanded="true" />
+            <element signature="e#0#124#0" expanded="true" />
+            <element signature="e#3058#4149#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/01-http/02-servidor-nodejs/api-web/src/main.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
+        <state relative-caret-position="161">
           <caret line="9" column="2" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
@@ -298,13 +291,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/01-http/02-servidor-nodejs/api-web/src/app.controller.ts">
+    <entry file="file://$PROJECT_DIR$/deberes/01-calculadora/calculadora/src/main.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="345" column="40" selection-start-line="345" selection-start-column="40" selection-end-line="345" selection-end-column="40" />
+        <state relative-caret-position="207">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
           <folding>
-            <element signature="e#0#124#0" expanded="true" />
-            <element signature="n#!!block;n#semilla#0;n#AppController#0" />
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deberes/01-calculadora/calculadora/src/app.controller.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="89" column="8" lean-forward="true" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#113#0" expanded="true" />
           </folding>
         </state>
       </provider>

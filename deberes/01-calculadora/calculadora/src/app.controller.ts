@@ -19,17 +19,59 @@ export class AppController {
   @Get('/suma')
   @HttpCode(200)
   sumaJPZ(@Headers() headers, @Request() request, @Response() response) {
-    if (headers.numero && headers.numero2) {
-    const cookie = request.cookies;
-    console.log('Headers: ', headers);
+
+    //const cookie = request.cookies;
+    const cookieSegura = request.signedCookies;
     const numA = Number(headers.numero);
     const numB = Number(headers.numero2);
     const resp = numA + numB;
-    response.cookie('nombreUsuario', 'Jacinto');
-    return response.send({'La suma es: ': resp.toString(), 'nombreUsuario': cookie.nombreUsuario});
-  }else{
-      return response.status(200).send({mensaje: 'Error no hay valores para sumar', error: 200})
+
+    if(!cookieSegura.intentos){
+      response.cookie('intentos','100',{signed:true});
     }
+    console.log('Headers: ', headers);
+
+    if(!cookieSegura.nombreUsuario) {
+      response.cookie('nombreUsuario', 'Jacinto');
+    }
+
+
+    const numIntentos = cookieSegura.intentos - resp;
+
+    const keyValidar = Joi.object().keys({
+      num1 : Joi.number().integer().required(),
+      num2 : Joi.number().integer().required()
+    });
+
+    const objValidar = {
+      num1: numA,
+      num2: numB
+    };
+    const validacion = Joi.validate(objValidar,keyValidar);
+
+    if(!validacion.error){
+      console.log('Puede continuar la operación... datos validados')
+    }else{
+      return response.send(`EXISTE UN ERROR: ${validacion.error}`)
+    }
+    if(numIntentos <=0){
+      const respuesta = {
+        resultado: resp,
+        user: cookieSegura.nombreUsuario,
+        mensaje: "SE HAN HAGOTADO LOS TOKENS"
+      };
+      response.send(respuesta);
+    }else{
+      const respuesta = {
+        resultado: resp,
+        user: cookieSegura.nombreUsuario,
+      };
+      if(cookieSegura.intentos){
+        response.cookie('Intentos Disponibles',numIntentos,{signed:true});
+      }
+      return response.send(respuesta);
+    }
+
   }
 
   //Método POST - RESTA
