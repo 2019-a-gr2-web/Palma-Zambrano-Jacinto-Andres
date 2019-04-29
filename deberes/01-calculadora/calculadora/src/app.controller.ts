@@ -77,19 +77,51 @@ export class AppController {
   //Método POST - RESTA
   @Post('/resta')
   @HttpCode(201)
-  restaJPZ(@Body() parametros, @Response() resp, @Request() request ){
+  restaJPZ(@Body() parametros, @Response() response, @Request() request ){
   console.log(parametros);
-  if(parametros.numero && parametros.numero2){
-    const cookie = request.cookies;
+
+    const cookieSegura = request.signedCookies;
     const numA = Number(parametros.numero);
     const numB = Number(parametros.numero2);
     const numResta = numA-numB;
-    resp.cookie('nombreUsuario', 'Jacinto');
-    return resp.send({'La resta es: ': numResta.toString(), 'nombreUsuario': cookie.nombreUsuario});
+    response.cookie('nombreUsuario', 'Jacinto');
 
-  }else{
-    return resp.status(400).send("DEBE DE INGRESAR NUMEROS");
-  }
+    const numIntentos = cookieSegura.intentos - numResta;
+
+    const keyValidar = Joi.object().keys({
+      num1 : Joi.number().integer().required(),
+      num2 : Joi.number().integer().required()
+    });
+
+    const objValidar = {
+      num1: numA,
+      num2: numB
+    };
+    const validacion = Joi.validate(objValidar,keyValidar);
+    if(!validacion.error){
+      console.log('Puede continuar la operación... datos validados')
+    }else{
+      return response.send(`EXISTE UN ERROR: ${validacion.error}`)
+    }
+    if(numIntentos <=0){
+      const respuesta = {
+        resultado: numResta,
+        user: cookieSegura.nombreUsuario,
+        mensaje: "SE HAN HAGOTADO LOS TOKENS"
+      };
+      response.send(respuesta);
+    }else{
+      const respuesta = {
+        resultado: numResta,
+        user: cookieSegura.nombreUsuario,
+      };
+      if(cookieSegura.intentos){
+        response.cookie('Intentos Disponibles',numIntentos,{signed:true});
+      }
+      return response.send(respuesta);
+    }
+
+
 
   }
 
