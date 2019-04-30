@@ -1,4 +1,9 @@
 <% const nombre = 'Jacinto' // Codigo JS%>
 <%=nombre%>
 <% const arreglo= [1,2,3,4,5]; %>
-<% %>
+<%=arreglo%>
+<% const objeto = {nombre: 'Jacinto'};%>
+<%=objeto.nombre%>
+<% arreglo.forEach((valorActual) =>{%>
+    <li><%= valorActual%></li>
+<%})%>
