@@ -344,11 +344,73 @@ const rFilter = arregloNumerosFilter.filter(// COND TRUE -> Agrega al arreglo
     }
 );
 console.log(`RESPUESTA FILTER: ${rFilter}`);
+
 //5) Indicar si TODOS los valores son positivos
+const arregloNumerosEvery = [1,2,3,4,5,6];
+
+const respuestaEvery = arregloNumerosEvery.every( // si TODOS cumplen devuelve TRUE
+                          // si ALGUNO no cumple FALSE
+    (valorActual)=>{
+      return valorActual >0
+    }
+
+);
+console.log(`RESPUESTA EVERY: ${respuestaEvery}`); // TRUE
 //6) ALGUN valor es menor que 2
+const arregloNumerosSome = [1,2,3,4,5,6];
+const respuestaSome = arregloNumerosSome.some( // Si ALGUNO cumple la codición TRUE
+                                              // Si TODOS no cumplen FALSE
+    (valorActual) => {
+      return valorActual == 2;
+    }
+);
+console.log(`RESPUESTA SOME: ${respuestaSome}`); // TRUE
 //7) Sumar todos los valores
+ const arregloNumerosReduce = [1,2,3,4,5,6];
+ const valorDondeEmpiezaCalculo = 0;
+
+ const respuestaReduce = arregloNumerosReduce.reduce(
+     (acumulado, valorActual) => {
+       return acumulado + valorActual;
+       },
+     valorDondeEmpiezaCalculo
+ );
+console.log(`Respuesta REDUCE: ${respuestaReduce}`);
+// < 4 sumar 10% +5
+// >=4 sumar 15% + 3
+const valorInicial =0;
+const salida = arregloNumerosReduce.reduce(
+    (acumulado,valorActual) =>{
+      if(valorActual>=4){
+        return ((acumulado + valorActual + valorActual*0.15 )+ 3)
+      }else{
+        return ((acumulado + valorActual + valorActual*0.1) + 5)
+      }
+    }, valorInicial
+);
+console.log(`Respuesta REDUCE 2: ${salida}`);
+
 //9) Restar todos los valores de 100
+const valorInicial2 =100;
+const salida2 = arregloNumerosReduce.reduce(
+    (acumulado,valorActual) =>{
+      return acumulado -valorActual
+    }, valorInicial2
+);
+console.log(`Respuesta REDUCE 100: ${salida2}`);
 
 // 1.1) Sumar 10 a todos
 // 1.2) Filtrar a los mayores a 15
 // 1.3) Si hay algun numero mayor a 30
+const arregloNumerosEjercicio = [1,2,3,4,5,6];
+
+const salidaEjer =arregloNumerosEjercicio.map(
+    (valorActual)=>{
+      return valorActual +10;
+    }).filter((valorActual)=> {
+      return valorActual > 15;
+}).some((valorActual)=>{
+    return valorActual >30;
+    });
+
+console.log(`Respuesta Ejercicios: ${salidaEjer}`);
