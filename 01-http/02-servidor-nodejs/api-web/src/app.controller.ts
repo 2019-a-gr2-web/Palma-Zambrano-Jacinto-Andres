@@ -167,6 +167,16 @@ export class AppController {
 
         });
     }
+
+    @Get('estilos')
+    estilos(
+        @Response() res
+    ) {
+        return res.render(
+            'peliculas/estilos',{
+
+            });
+    }
 }
 
 
