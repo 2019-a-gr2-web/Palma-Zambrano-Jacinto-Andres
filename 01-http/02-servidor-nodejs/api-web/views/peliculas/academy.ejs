@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-92186899-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-92186899-2');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>databits</title>
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <link href="https://databits.ai/wp-content/uploads/2019/01/bootstrap.min_.css" rel="stylesheet">
+    <link href="https://databits.ai/wp-content/uploads/2019/03/academy-new1-3.css" rel="stylesheet">
+    <link href="https://databits.ai/wp-content/uploads/2019/02/testimonios.css" rel="stylesheet">
+    <link href="https://databits.ai/wp-content/uploads/2019/02/products.css" rel="stylesheet">
+    <link href="https://databits.ai/wp-content/uploads/2019/03/new-products-1.css" rel="stylesheet">
+    <script src="https://databits.ai/wp-content/uploads/2019/01/modernizr-custom.js"></script>
+    <link id="favicon" rel="icon" href="https://databits.ai/wp-content/uploads/2019/03/Favicon-databits-Blanco.png" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" rel="stylesheet">
+    <link href="https://databits.ai/wp-content/uploads/2019/02/slick-theme.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+</head>
+
+<body>
+<!--------------------------- NavBar-------------------------------------->
+<section>
+    <nav id="nav" class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="padding-bottom: 10px;">
+
+        <a href="/" class="navbar-left">
+            <img src="https://databits.ai/wp-content/uploads/2019/03/Logo-databits.Blue_.png" height="65px">
+        </a>
+        <!-- boton tipo hamburguesa -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav m-auto">
+                <li class="nav-item active" style="padding-right: 60px;">
+                    <a class="navbar-brand" href="https://databits.ai/categorias">
+                        <img src="https://databits.ai/wp-content/uploads/2019/01/course_icon-1.png" width="65" height="65" alt="Cursos"
+                             style="text-decoration-color: black" />
+                        <span>Cursos</span>
+                    </a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="navbar-brand" href="https://www.handytec.mobi/es/academy" target="_blank" rel="noopener noreferrer">
+                        <img src="https://databits.ai/wp-content/uploads/2019/01/corp_icon-1.png" width="65" height="65" alt="Plan" style="text-decoration-color: black" />
+                        <span>Plan Corporativo</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li id="btn-login" class="nav-item active">
+                    <button href="https://databits.ai/login" class="btn login-academy" onclick="location.href = 'https://databits.ai/login';"
+                            style="font-weight: bold">Acceder</button>
+                    <!-- añadir link para el inicio de sesion-->
+                </li>
+                <li id="perfil" class="nav-item dropdown" style="padding-right: 5rem; display: none;">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mi perfil</a>
+                    <div class="dropdown-menu" style="background-color: #ffffff;width: 300px;" aria-labelledby="navbarDropdown">
+                        <p class="dropdown-item" style="margin-left: 0px;font-weight: bold;padding-left: 3rem;">¡Bienvenido/a!</p>
+                        <a class="dropdown-item" style="margin-left: 0px;color: #22bcaa !important;" href="https://databits.ai/mi-cuenta/"><i class="fa fa-user-circle fa-lg"></i> Mi Cuenta</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" style="margin-left: 0px;" href="https://databits.ai/tienda/"><i class="fa fa-shopping-bag fa-lg"></i> Tienda</a>
+                        <a class="dropdown-item" style="margin-left: 0px;" href="https://databits.ai/carrito/"><i class="fa fa-shopping-cart fa-lg"></i> Carrito</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" style="margin-left: 0px;" href="https://databits.ai/contacto/"><i class="fa fa-info-circle fa-lg"></i> Contacto</a>
+                        <a class="dropdown-item" style="margin-left: 0px;color: #c12a2a !important;" href="https://databits.ai/wp-login.php?action=logout"><i class="fa fa-sign-out fa-lg"></i> Cerrar Sesión</a>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</section>
+<!--------------------------- Carrousel Principal-------------------------------------->
+<section>
+
+<div id="demo" class="carousel slide" data-ride="carousel" data-interval="3500">
+
+    <!-- Indicators -->
+    <ul class="carousel-indicators" style="height: 60px;">
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+        <li data-target="#demo" data-slide-to="1"></li>
+        <li data-target="#demo" data-slide-to="2"></li>
+        <li data-target="#demo" data-slide-to="3"></li>
+    </ul>
+
+    <!-- The slideshow -->
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="row" style="background-image: url(https://databits.ai/wp-content/uploads/2019/03/Slides-01.png); background-size: cover; width: auto;height: 95vh;">
+                <div class="col-md-1"></div>
+                <div class="col-md-5 m-auto">
+                    <div class="card text-center">
+                        <div class="card-body" style="text-align: left;">
+                            <h3 class="card-title-dark" style="color:#005A87">Conviértete en un Científico de Datos</h3>
+                            <p class="card-text" style="padding:30px; text-align: left;font-size: 1.5em;color: #999999;">Programa
+                                Corporativo para entrenar equipos de Ciencia de Datos y Big Data.</p>
+                            <button href="https://databits.ai/tienda/" onclick="location.href = 'https://databits.ai/tienda';" class="btn info-academy"
+                                    style="font-weight: bold;width: 250px;">Inscribirme Ahora</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6"></div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="row" style="background-image: url(https://databits.ai/wp-content/uploads/2019/03/Slides-02-1.jpg); background-size: cover; width: auto;height: 95vh;">
+                <div class="col-md-1"></div>
+                <div class="col-md-5 m-auto">
+                    <div class="card text-center">
+                        <div class="card-body" style="text-align: left;">
+                            <h3 class="card-title-dark" style="color:#005A87">Refuerza tus habilidades</h3>
+                            <p class="card-text" style="padding:30px; text-align: left;font-size: 1.5em;color: #999999;">Nuestros
+                                cursos avanzados te premitirán especializarte en varias áreas de aplicación del
+                                Data Science.</p>
+                            <button href="#Cursos" onclick="location.href = '#Cursos';" class="btn info-academy"
+                                    style="font-weight: bold;width: 220px;">Saber más</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6"></div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="row" style="background-image: url(https://databits.ai/wp-content/uploads/2019/03/Slides-03-1.jpg); background-size: cover; width: auto;height: 95vh;">
+                <div class="col-md-1"></div>
+                <div class="col-md-6 m-auto">
+                    <div class="card text-center">
+                        <div class="card-body" style="text-align: left;">
+                            <h3 class="card-title-dark" style="color:#005A87">Aprende a tu propio ritmo</h3>
+                            <p class="card-text" style="padding:30px; text-align: left;font-size: 1.5em;color: #999999;">Accede
+                                a tus cursos desde cualquier lugar y a cualquier momento.</p>
+                            <button href="#Cursos" onclick="location.href = '#Cursos';" class="btn info-academy"
+                                    style="font-weight: bold;width: 220px;border: none">Saber más</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5"></div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="row" style="background-image: url(https://databits.ai/wp-content/uploads/2019/03/Slides-04-1.jpg); background-size: cover; width: auto;height: 95vh;">
+                <div class="col-md-1"></div>
+                <div class="col-md-4 m-auto">
+                    <div class="card text-center">
+                        <div class="card-body" style="text-align: left;">
+                            <h3 class="card-title-dark" style="color:#005A87">Plan Corporativo</h3>
+                            <p class="card-text" style="padding:30px; text-align: left;font-size: 1.5em;color: #999999;">Entérate
+                                de nuestros programas especiales para empresas.</p>
+                            <button href="https://databits.ai/contacto/" onclick="location.href = 'https://databits.ai/contacto/'"; class="btn info-academy"
+                                    style="font-weight: bold;width: 220px;border: none">Contáctanos</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </a>
+</div>
+</section>
+
+
+<!--------------------------- Div Azul con Texto-------------------------------------->
+<section style="transform: skew(0deg,-4deg);margin-top:-25px;">
+    <div class="container-fluid" style="background-color:#005A87; padding-top: 25px;padding-bottom: 25px;">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row" style="text-align: center;">
+                    <div class="col-md-4">
+                        <div class="card-subtitle" style="transform: skew(0deg,4deg);">
+                            <div class="card-body">
+                                <img src="https://databits.ai/wp-content/uploads/2019/01/icon01.png" height="80px">
+                                <div>
+                                    <span style="color: white; font-size: 1.2em">Ciencia de Datos Online</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card-subtitle" style="transform: skew(0deg,4deg);">
+                            <div class="card-body">
+                                <img src="https://databits.ai/wp-content/uploads/2019/01/icon02.png" height="80px">
+                                <div>
+                                    <span style="color: white; font-size: 1.2em">Programa en Python y R</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4">
+                        <div class="card-subtitle" style="transform: skew(0deg,4deg);">
+                            <div class="card-body">
+                                <img src="https://databits.ai/wp-content/uploads/2019/01/icon03.png" height="80px">
+                                <div>
+                                    <span style="color: white; font-size: 1.2em">Tu carrera en Ciencia de Datos</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--------------------------- Secccion  Cursos -------------------------------------->
+<div class="container-fluid" style="padding-bottom: 2rem;">
+
+    <div class="row" style="display: block">
+        <div class="col-md-5 center-block" style=" float:none; margin-left:auto; margin-right:auto;">
+            <p style="color:#005A87; text-align: center; padding-top: 20px ;padding-bottom: 30px;font-size: 2.1em">Áreas del
+                <span class="bold"> conocimiento</span>
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="row" style="display:flex">
+        <div class="col-lg-7 center-block" style=" float:none; margin-left:auto; margin-right:auto;">
+            <div class="card-subtitle">
+                <p style="font-family: Century Gothic, Muli, sans-serif; font-weight: bold; font-size: 1.4em;color: #5D5D5D; text-align:center; ">
+                    Contamos con una excelente propuesta de cursos para que te conviertas en un especialista en Ciencia de Datos y Big Data</p>
+            </div>
+        </div>
+
+
+        <!----test nuevos--->
+        <div class="container" style="padding-top: 2rem;">
+            <div class="row">
+                <div class="col-md-3 col-sm-6" style="padding-bottom:30px">
+                    <div class="product-grid6">
+                        <div class="product-image6">
+                            <a href="https://databits.ai/categorias/#python">
+                                <img class="pic-1" src="https://databits.ai/wp-content/uploads/2019/03/Miniatura-categoría_Python-1.jpg">
+                            </a>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="title"><a href="https://databits.ai/categorias/#python">Python</a></h3>
+
+                        </div>
+                        <ul class="social">
+                            <li><a href="https://databits.ai/categorias/#python" data-tip="Ver cursos"><i class="fa fa-search"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6" style="padding-bottom:30px">
+                    <div class="product-grid6">
+                        <div class="product-image6">
+                            <a href="https://databits.ai/categorias/#R">
+                                <img class="pic-1" src="https://databits.ai/wp-content/uploads/2019/03/Miniatura-categoría_R-1.jpg">
+                            </a>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="title"><a href="https://databits.ai/categorias/#R">R</a></h3>
+
+                        </div>
+                        <ul class="social">
+                            <li><a href="https://databits.ai/categorias/#R" data-tip="Ver cursos"><i class="fa fa-search"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6" style="padding-bottom:30px">
+                    <div class="product-grid6">
+                        <div class="product-image6">
+                            <a href="https://databits.ai/categorias/#ciencia">
+                                <img class="pic-1" src="https://databits.ai/wp-content/uploads/2019/03/Miniatura-categoría_Ciencia-de-Datos.jpg">
+                            </a>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="title"><a href="https://databits.ai/categorias/#ciencia">Ciencia de Datos</a></h3>
+
+                        </div>
+                        <ul class="social">
+                            <li><a href="https://databits.ai/categorias/#ciencia" data-tip="Ver cursos"><i class="fa fa-search"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6" style="padding-bottom:30px">
+                    <div class="product-grid6">
+                        <div class="product-image6">
+                            <a href="https://databits.ai/categorias/">
+                                <img class="pic-1" src="https://databits.ai/wp-content/uploads/2019/03/Miniatura-categoría_Big-Data.jpg">
+                            </a>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="title"><a href="https://databits.ai/categorias/">Big Data</a></h3>
+
+                        </div>
+                        <ul class="social">
+                            <li><a href="https://databits.ai/categorias/" data-tip="Próximamente"><i class="fa fa-search"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!----fin test ----->
+
+
+
+
+
+    <!--------------------------- Div Gris con Texto-------------------------------------->
+<section style="transform: skew(0deg,-4deg);">
+    <div class="container-fluid" style="background-color:#EAEAEA; padding-top: 40px;padding-bottom: 40px;">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-lg-1"></div>
+                    <div class="col-md m-auto">
+                        <div class="card-academy" style="transform:skew(0deg,4deg);">
+                            <div class="card-body">
+                                <div style="display:block; text-align: center">
+                                    <img src="https://databits.ai/wp-content/uploads/2019/03/Icono-Estudia.png" height="75px">
+                                </div>
+                                <h5 class="card-title-academy" style="color:#22BCAA">Estudia cuando quieras</h5>
+                                <p>
+                                    Accedes a los cursos de acuerdo a tu calendario con los horarios más flexibles.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md m-auto">
+                        <div class="card-academy" style="transform:skew(0deg,4deg);">
+                            <div class="card-body">
+                                <div style="display:block; text-align: center">
+                                    <img src="https://databits.ai/wp-content/uploads/2019/03/Icono-Encuentra.png" height="75px">
+                                </div>
+                                <h5 class="card-title-academy" style="color:#22BCAA">Encuentra la mejor formación</h5>
+                                <p>
+                                    Selecciona el curso que mejor te convenga de acuerdo a tu perfil.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md m-auto">
+                        <div class="card-academy" style="transform:skew(0deg,4deg);">
+                            <div class="card-body">
+                                <div style="display:block; text-align: center">
+                                    <img src="https://databits.ai/wp-content/uploads/2019/03/Icono-Aprende.png" height="85px">
+                                </div>
+                                <h5 class="card-title-academy" style="color:#22BCAA">Aprende de los mejores</h5>
+                                <p>
+                                    Recibirás clases de algunos de los mejores especialistas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--------------------------- Barra con Testimonios Dinamico -------------------------------------->
+<div class="container" style="margin-top:50px">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center" style="color: #005A87; padding-top: 40px; font-weight: bold; font-size: 2.1em">Testimonios</h2>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-10 m-auto" style="padding-left: 60px;padding-right: 60px;padding-bottom: 30px;">
+            <div class="brands">
+
+                <div>
+                    <div class="testimonial" style="min-height:319px; background: white">
+                        <div class="test-body-block">
+                            <div class="row">
+                                <div class="col-lg-6 m-auto" style="text-align: center">
+                                    <img class="test-img" src="https://databits.ai/wp-content/uploads/2019/02/test-Yajaira.png" alt="face1">
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="test-text" style="min-height: 235px;display: flex; flex-direction: column;
+								 justify-content: center;">
+                                    <p >En este programa he aprendido herramientas
+                                        muy útiles e interesantes; las
+                                        prácticas y dinámicas de grupo me
+                                        permitieron experimentar las potencialidades
+                                        de las herramientas y poner en
+                                        práctica lo aprendido. Felicito al
+                                        equipo de handytec Academy por su
+                                        gran profesionalidad.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12" style="text-align: center">
+                                    <div class="test-heading" style="color:#005A87">
+                                        <p>Yajaira Mendoza</p>
+                                    </div>
+                                    <div class="test-comp" style="color:#22BCAA">Consultora BI</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="testimonial " style="min-height:319px; background: white">
+                        <div class="test-body-block">
+                            <div class="row">
+                                <div class="col-lg-6 m-auto" style="text-align: center">
+                                    <img class="test-img" src="https://databits.ai/wp-content/uploads/2019/02/test-Andres.png" alt="face1">
+                                </div>
+
+                            </div>
+                            <div class="row" >
+                                <div class="test-text" style="min-height: 235px;display: flex; flex-direction: column;
+								 justify-content: center;">
+                                    <p>El curso que tomé fue mejor de lo que esperaba, la
+                                        temática abordada muy variada y precisa, los
+                                        instructores son profesionales de muy alto nivel que
+                                        dominan muy bien los temas, existe un enfoque
+                                        bastante fuerte en el componente teórico pero
+                                        también se abordan ejemplos prácticos para
+                                        comprender mejor el tema.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12" style="text-align: center">
+                                    <div class="test-heading" style="color:#005A87">
+                                        <p>Andrés Caiza</p>
+                                    </div>
+                                    <div class="test-comp" style="color:#22BCAA">Programador</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="testimonial" style="min-height:319px; background: white">
+                        <div class="test-body-block">
+                            <div class="row">
+                                <div class="col-lg-6 m-auto" style="text-align: center">
+                                    <img class="test-img" src="https://databits.ai/wp-content/uploads/2019/02/test-Jessie.png" alt="face1">
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="test-text" style="min-height: 235px ;display: flex; flex-direction: column;
+								 justify-content: center;">
+                                    <p>El curso que tomé me pareció realmente
+                                        interesante y fue de mucha ayuda en mi
+                                        desarrollo profesional pues me ayudó a
+                                        completar el perfil requerido para lograr una
+                                        especialización. Igualmente quisiera valorar
+                                        el conocimiento del instructor que lo impartió.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12" style="text-align: center">
+                                    <div class="test-heading" style="color:#005A87">
+                                        <p>Jessica Pérez</p>
+                                    </div>
+                                    <div class="test-comp" style="color:#22BCAA">Consultora</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="testimonial" style="min-height:319px; background: white">
+                        <div class="test-body-block">
+                            <div class="row">
+                                <div class="col-lg-6 m-auto" style="text-align: center">
+                                    <img class="test-img" src="https://databits.ai/wp-content/uploads/2019/02/test-Leo.png" alt="face1">
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="test-text" style="min-height: 235px ;display: flex; flex-direction: column;
+								 justify-content: center;">
+                                    <p>Los procesos de aprendizaje tradicionales no se comparan con
+                                        la innovación que proponen los programas de handytec Academy,
+                                        la convivencia entre casos reales y lo último en tecnologías de Big Data Analytics
+                                        me permitieron fortalecer mi competencias técnicas, administrativas y de negocio
+                                        para apoyar mejor a mi equipo de trabajo y desarrollar mejores productos.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12" style="text-align: center">
+                                    <div class="test-heading" style="color:#005A87">
+                                        <p>Leonardo Burbano</p>
+                                    </div>
+                                    <div class="test-comp" style="color:#22BCAA">Especialista en Tecnología</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!----------------------------------- Footer ------------------------------------------------>
+<section style="background-color:#005A87;position: absolute;width: 100%;">
+    <div class="" style="padding-top: 20px;background-color:#005A87">
+        <div class="container-fluid" style="background-color:#005A87">
+            <footer class="page-footer">
+                <div class="row" style="padding-top:25px;">
+                    <div class="col-md-3"></div>
+
+                    <div class="col-md-2">
+                        <h5 class="font-weight-bold" style="color: white;">APRENDE</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="https://databits.ai/#Cursos" style="color:#C2C2C2">Cursos</a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="col-md-2">
+                        <h5 class="font-weight-bold" style="color: white;">PLANES</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="https://databits.ai/#Cursos" style="color:#C2C2C2">Individual</a>
+                            </li>
+                            <li>
+                                <a href="https://www.handytec.mobi/es/academy" target="_blank" style="color:#C2C2C2" rel="noopener noreferrer">Corporativo</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-2">
+                        <h5 class="font-weight-bold" style="color: white;">ACERCA DE</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="https://databits.ai/contacto/" target="_blank" style="color:#C2C2C2" rel="noopener noreferrer">Contacto</a>
+                            </li>
+                            <li>
+                                <a href="https://databits.ai/politica-privacidad/" target="_blank" style="color:#C2C2C2" rel="noopener noreferrer">Políticas de Privacidad</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2" style="margin-top: 30px;">
+                        <p style="color: white;margin-bottom: 0px;">Avalado por</p>
+                        <img style="width: 120px;" src="https://databits.ai/wp-content/uploads/2019/01/logo_big_white-1.png">
+                    </div>
+
+
+                </div>
+
+                <!-- Footer de 3 columnas-->
+                <div class="footer-direccion">
+                    <div class="row">
+                        <div class="col-md-3 m-auto">
+
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="#" onclick="openLink('https://www.handytec.mobi')">
+                                        <img src="https://databits.ai/wp-content/uploads/2019/03/Logo-databits-Blanco.png" height="75px">
+                                    </a>
+                                </li>
+                                <li>
+                                    <p style="color: #C2C2C2; font-size: 0.9em; margin-top: 15px;"></p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-3 m-auto">
+                            <br>
+                            <a style="color:#C2C2C2">Av. República de El Salvador N35-82 y Portugal</a>
+                            <br>
+                            <a style="color:#C2C2C2">Quito, Ecuador</a>
+                        </div>
+
+                        <div class="col-md-3 m-auto">
+                            <br>
+                            <div class="row-img">
+                                <h5 class="font-weight-bold" style="color: white;">Síguenos</h5>
+                                <img class="zoom" href="#" onclick="openLink('https://www.linkedin.com/company/handytec')"
+                                     src="https://databits.ai/wp-content/uploads/2019/01/linkedin_logo.png" width="30" height="30" alt="LinkedIn"
+                                     style="cursor: pointer;">
+                                <img class="zoom" href="#" onclick="openLink('https://twitter.com/handytec')" src="https://databits.ai/wp-content/uploads/2019/01/twitter_logo.png"
+                                     width="30" height="30" alt="Twitter" style="cursor: pointer;">
+                                <img class="zoom" href="#" onclick="openLink('https://www.facebook.com/handytec')"
+                                     src="https://databits.ai/wp-content/uploads/2019/01/facebook_logo.png" width="30" height="30" alt="Facebook"
+                                     style="cursor: pointer;">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </footer>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://databits.ai/wp-content/uploads/2019/01/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://databits.ai/wp-content/uploads/2019/01/bootstrap.min_.js"></script>
+<script src="https://databits.ai/wp-content/uploads/2019/01/navcolor.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('.brands').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: false,
+            autoplaySpeed: 3000,
+            pauseOnFocus: false,
+            pauseOnHover: false,
+            responsive: [
+                {
+                    breakpoint: 1025,
+                    settings: {
+                        slidesToShow: 2,
+                        autoplay: false,
+                        autoplaySpeed: 3000,
+                        pauseOnFocus: false,
+                        pauseOnHover: false
+                    }
+                },
+                {
+                    breakpoint: 520,
+                    settings: {
+                        slidesToShow: 1,
+                        autoplay: false,
+                        autoplaySpeed: 3000,
+                        pauseOnFocus: false,
+                        pauseOnHover: false
+                    }
+                }
+            ]
+        });
+    });
+</script>
+
+<script>
+    function openLink(link) {
+        window.open(link);
+    }
+    function changeLink(link) {
+        window.location.replace(link);
+    }
+</script>
+
+<script>
+    /*console.log(document.cookie);
+    var cookie = document.cookie.indexOf('user_logged') !== -1;
+    var btnLogin = document.getElementById("btn-login");
+    var perfil = document.getElementById("perfil");
+    if (cookie){
+      btnLogin.style.display = 'none';
+      perfil.style.display = 'inline';
+    } else {
+      btnLogin.style.display = 'inline';
+      perfil.style.display = 'none';
+    }*/
+</script
