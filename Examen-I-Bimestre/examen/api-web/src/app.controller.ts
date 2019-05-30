@@ -29,25 +29,24 @@ export class AppController {
   }
 
   //Lleva a la página de la tabla de los autos
-  @Get('/autos')
-  getAutos(@Response() res, @Request() req){
+  @Get('/conductores')
+  getConductores(@Response() res, @Request() req){
     const cookieUsuarioSegura = req.signedCookies;
     const arregloConductores= this.appService.bddConductores;
 
-    res.render('autos',{arregloConductores:arregloConductores,nombre:cookieUsuarioSegura.nombreUsuario});
+    res.render('conductores',{arregloConductores:arregloConductores,nombre:cookieUsuarioSegura.nombreUsuario});
     }
 
 
 
 
 
-  @Get('/crear-autos')
-  getCrearAutos(@Response() res, @Request() req){
+  @Get('/crear-conductores')
+  getCrearConductores(@Response() res, @Request() req){
     const cookieUsuarioSegura = req.signedCookies;
-    return res.render('crear_autos', {
+    return res.render('crear_conductores', {
       nombre: cookieUsuarioSegura.nombreUsuario
     });
-    res.render('crear_autos');
   }
 
   //Genera la cookie segura con el nombre de usuario
@@ -65,7 +64,19 @@ export class AppController {
     resp.redirect('/examen/inicio')
   }
 
+  //Crea un nuevo conductor para ser añadido a la lista
+  @Post('/crearConductor')
+  crearConductorPost(
+      @Body() conductor:Conductores,
+      @Response() res
+  ){
 
+    conductor.numeroAutos=Number(conductor.numeroAutos);
+    conductor.fechaNacimiento =new Date(conductor.fechaNacimiento);
+    console.log(conductor);
+    this.appService.crearConductor(conductor);
+    res.redirect('/examen/autos');
+  }
 
 
 
