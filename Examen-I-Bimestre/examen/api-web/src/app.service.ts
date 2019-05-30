@@ -1,8 +1,29 @@
 import { Injectable } from '@nestjs/common';
+import {Conductores} from "./conductores/conductores";
 
 @Injectable()
 export class AppService {
-  getHello(): string {
-    return 'Hello World!';
+
+  bddConductores : Conductores[]=[];
+  recnum = 1;
+
+  constructor(){
+    const conductor:Conductores={
+      nombres:'Jacinto Andres',
+      apellidos:'Palma Zambrano',
+      fechaNacimiento : new Date(1993,12,8),
+      numeroAutos: 1,
+      licenciaValida:false
+
+    };
+    this.crearConductor(conductor)
   }
+
+  crearConductor(nuevoConductor: Conductores):Conductores{
+    nuevoConductor.id = this.recnum;
+    this.bddConductores.push(nuevoConductor);
+    return nuevoConductor
+  }
+
+
 }

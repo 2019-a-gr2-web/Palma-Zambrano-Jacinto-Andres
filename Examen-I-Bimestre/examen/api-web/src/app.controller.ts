@@ -1,6 +1,7 @@
 import {Controller, Delete, Get, HttpCode, Post, Put, Headers, Query, Param, Body, Request, Response} from '@nestjs/common';
 import { AppService } from './app.service';
 import * as Joi from '@hapi/joi';
+import {Conductores} from "./conductores/conductores";
 
 @Controller('/examen')
 export class AppController {
@@ -8,10 +9,7 @@ export class AppController {
 
   }
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
-  }
+
 
   //Lleva a la página de Inicio de la aplicación
   @Get('/inicio')
@@ -30,13 +28,26 @@ export class AppController {
     res.render('login')
   }
 
+  //Lleva a la página de la tabla de los autos
   @Get('/autos')
   getAutos(@Response() res, @Request() req){
     const cookieUsuarioSegura = req.signedCookies;
-    return res.render('autos', {
+    const arregloConductores= this.appService.bddConductores;
+
+    res.render('autos',{arregloConductores:arregloConductores,nombre:cookieUsuarioSegura.nombreUsuario});
+    }
+
+
+
+
+
+  @Get('/crear-autos')
+  getCrearAutos(@Response() res, @Request() req){
+    const cookieUsuarioSegura = req.signedCookies;
+    return res.render('crear_autos', {
       nombre: cookieUsuarioSegura.nombreUsuario
     });
-    res.render('autos');
+    res.render('crear_autos');
   }
 
   //Genera la cookie segura con el nombre de usuario
@@ -53,6 +64,11 @@ export class AppController {
     cookieUsuarioSegura.nombreUsuario = nombre;
     resp.redirect('/examen/inicio')
   }
+
+
+
+
+
 
   //Elimina la cookie y redirige al ingreso de datos
   @Post('/eliminarCookie')
