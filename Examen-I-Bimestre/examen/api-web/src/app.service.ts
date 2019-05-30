@@ -21,9 +21,19 @@ export class AppService {
 
   crearConductor(nuevoConductor: Conductores):Conductores{
     nuevoConductor.id = this.recnum;
+    this.recnum++;
     this.bddConductores.push(nuevoConductor);
     return nuevoConductor
   }
 
-
+  eliminarConductorPorId(id:number):Conductores[]{
+    console.log('id:', id);
+    const indice= this.bddConductores.findIndex(
+        (conductor)=>{
+          return conductor.id===id
+        }
+    );
+    this.bddConductores.splice(indice,1);
+    return this.bddConductores;
+  }
 }

@@ -88,4 +88,13 @@ export class AppController {
     response.clearCookie("nombreUsuario");
     response.redirect('/examen/login')
   }
+
+  //Elimina el conductor de la lista
+  @Post('/eliminarConductor')
+  posrtEliminarConductor(@Response() res,
+                 @Body('id') id: number, @Request() request) {
+
+    this.appService.eliminarConductorPorId(Number(id));
+    res.redirect('/examen/conductores');
+  }
 }
