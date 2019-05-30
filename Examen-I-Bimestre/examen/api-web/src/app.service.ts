@@ -36,4 +36,17 @@ export class AppService {
     this.bddConductores.splice(indice,1);
     return this.bddConductores;
   }
+
+  buscarPorNombre(nombre: string) {
+    console.log('nombre:', nombre);
+    const resultado=this.bddConductores.filter(
+        (conductor)=>{
+          return conductor.nombres.includes(nombre);
+        }
+    );
+    console.log('resultado:',resultado);
+    return resultado;
+
+
+  }
 }

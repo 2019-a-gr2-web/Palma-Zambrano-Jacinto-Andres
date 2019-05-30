@@ -97,4 +97,18 @@ export class AppController {
     this.appService.eliminarConductorPorId(Number(id));
     res.redirect('/examen/conductores');
   }
+
+  //Busca al conductor de acuerdo al paramtero de entrada
+  @Post('/buscarConductores')
+  buscarConductor(@Response() res,
+               @Body('busquedaConductor') busquedaConductor: string, @Request() request) {
+    const cookieSeg = request.signedCookies;
+    var arregloConductores=this.appService.buscarPorNombre(busquedaConductor);
+    console.log('impiendo arreglo conductores:',arregloConductores);
+    if(arregloConductores!=null){
+      res.render('conductores', {arregloConductores:arregloConductores,nombre:cookieSeg.nombreUsuario})
+    }else {
+      res.redirect('/examen/conductores');
+    }
+  }
 }

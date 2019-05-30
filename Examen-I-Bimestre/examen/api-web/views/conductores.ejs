@@ -96,20 +96,26 @@
 
 <section>
     <div class="container" style="flex-wrap: wrap">
-        <div class="row">
-            <div class="col-md-6 md-auto" style="position: relative">
-                <label for="nombre" style="font-size: 1.8em;">Busqueda</label>
-                <input class="form-control" id="nombre"  name="nombre" type="text">
+        <form action="/examen/buscarConductores" method="POST">
+            <div class="row">
+                <div class="col-md-6 md-auto" style="position: relative">
+
+                    <label for="busquedaConductor" style="font-size: 1.8em;">Busqueda</label>
+                    <input class="form-control" id="busquedaConductor"  name="busquedaConductor" type="text" style="width: 540px">
+
+                </div>
+
+
+                <div class="col-md -6 md-auto"  >
+                    <button class="btn-app" style="position:relative;top:50%; left:50%;">
+
+                        Buscar</button>
+                </div>
             </div>
-
-            <div class="col-sm -6 md-auto"  >
-                <button class="btn-app" style="position:relative;top:50%; left:50%;">
-
-                    Buscar</button>
-            </div>
+        </form>
 
 
-        </div>
+
         <div class="row">
             <div class="col-md-6 md-auto" style="position: relative">
 
@@ -123,6 +129,8 @@
             </div>
         </div>
     </div>
+    <br>
+    <br>
 </section>
 
 <!-- Sección de la Tabla -->
