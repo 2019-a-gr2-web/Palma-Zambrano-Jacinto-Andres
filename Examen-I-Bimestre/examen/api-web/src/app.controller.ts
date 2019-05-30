@@ -28,7 +28,7 @@ export class AppController {
     res.render('login')
   }
 
-  //Lleva a la página de la tabla de los autos
+  //Lleva a la página de la tabla de los conductores
   @Get('/conductores')
   getConductores(@Response() res, @Request() req){
     const cookieUsuarioSegura = req.signedCookies;
@@ -73,9 +73,10 @@ export class AppController {
 
     conductor.numeroAutos=Number(conductor.numeroAutos);
     conductor.fechaNacimiento =new Date(conductor.fechaNacimiento);
+    conductor.licenciaValida = Boolean(conductor.licenciaValida);
     console.log(conductor);
     this.appService.crearConductor(conductor);
-    res.redirect('/examen/autos');
+    res.redirect('/examen/conductores');
   }
 
 
