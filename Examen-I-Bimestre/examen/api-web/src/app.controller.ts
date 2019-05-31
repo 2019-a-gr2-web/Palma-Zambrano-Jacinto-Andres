@@ -9,8 +9,6 @@ export class AppController {
 
   }
 
-
-
   //Lleva a la página de Inicio de la aplicación
   @Get('/inicio')
   getInicio(@Response() res, @Request() req) {
@@ -18,8 +16,6 @@ export class AppController {
     return res.render('inicio', {
       nombre: cookieUsuarioSegura.nombreUsuario
     })
-
-
   }
 
   //Lleva a la página de login de la aplicación
@@ -37,10 +33,7 @@ export class AppController {
     res.render('conductores',{arregloConductores:arregloConductores,nombre:cookieUsuarioSegura.nombreUsuario});
     }
 
-
-
-
-
+//Lleva a la página que permite agregar un nuevo conductor
   @Get('/crear-conductores')
   getCrearConductores(@Response() res, @Request() req){
     const cookieUsuarioSegura = req.signedCookies;
@@ -111,4 +104,23 @@ export class AppController {
       res.redirect('/examen/conductores');
     }
   }
+
+  /* **************************** CONTROLADORES DEL HIJO ************************** */
+
+  @Get('/autos/:id')
+  mostrarAutos(@Param() params, @Headers() headers, @Request() req, @Response() res, @Body('nombre') nombre: string) {
+    const id= Number(params.id);
+    const cookieSeg = req.signedCookies;
+    const arregloAutos= this.appService.buscarPorId(Number(id));
+    console.log('arregloAutos:',arregloAutos);
+
+    return res.render('autos',{id:id,arregloAutos:arregloAutos,nombre:cookieSeg.nombreUsuario})
+  }
+
+
+
+
+
+
+
 }

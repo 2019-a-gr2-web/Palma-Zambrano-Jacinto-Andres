@@ -1,11 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import {Conductores} from "./conductores/conductores";
+import {Autos} from "./autos/autos";
 
 @Injectable()
 export class AppService {
 
   bddConductores : Conductores[]=[];
   recnum = 1;
+  bddAutos : Autos[]=[];
+  recnum2 = 1;
 
   constructor(){
     const conductor:Conductores={
@@ -17,7 +20,20 @@ export class AppService {
 
     };
     this.crearConductor(conductor)
+
+    const auto:Autos={
+    chasis:123456789,
+    nombreMarca:"Chevrolet",
+    colorUno:"azul",
+    colorDos:"",
+    nombreModelo:"Luv DMAX",
+    anio:2018,
+    conductorId:1
+    };
+  this.crearAuto(auto);
   }
+
+
 
   crearConductor(nuevoConductor: Conductores):Conductores{
     nuevoConductor.id = this.recnum;
@@ -46,7 +62,30 @@ export class AppService {
     );
     console.log('resultado:',resultado);
     return resultado;
+  }
+
+  //Métodos del Hijo - Auto
+
+  crearAuto(nuevoAuto: Autos):Autos{
+    nuevoAuto.id = this.recnum2;
+    this.recnum2++;
+    this.bddAutos.push(nuevoAuto);
+    return nuevoAuto
+  }
+
+  buscarPorId(id: number) {
+    console.log('id:', id);
+    const resultado=this.bddAutos.filter(
+        (auto)=>{
+          return auto.conductorId===id;
+        }
+    );
+    console.log('resultado:',resultado);
+    return resultado;
 
 
   }
+
+
+
 }
