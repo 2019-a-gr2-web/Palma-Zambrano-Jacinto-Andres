@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Autos</title>
+    <title>Crear Auto</title>
     <meta charset ="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -94,88 +94,74 @@
 
 </section>
 
-<!--Gestión del Aplicativo-->
+
 <section>
-    <div class="container" style="flex-wrap: wrap">
-        <form action="/examen/buscarAuto" method="POST">
+    <h1 style="text-align: center">Formulario de Creación de Auto</h1>
+    <div class="container">
+        <div class="mt-5 d-flex justify-content-center">
+            <!-- <form action="/examen/tienda/crearProducto" method="post">-->
+
+            <!--  <form action="/examen/tienda/crearProducto"method="post">-->
             <div class="row">
-                <div  class="col-md-6 md-auto" style="position: relative">
-
-                    <label for="busquedaAutos" style="font-size: 1.8em;">Búsqueda</label>
-                    <input class="form-control" id="busquedaAutos" name="busquedaAutos" type="text" style="width: 540px">
-
-                </div>
-
-                <div class="col-md -6 md-auto">
-
-                    <button class="btn-app" style="position:relative;top:50%; left:50%;">Buscar</button>
-
+                <div class="col-sm-12 md-auto">
+                    <label for="nombreProductoID">Nombre Producto</label>
+                    <input id="nombreProductoID" name="nombreProducto" type="text" style="width: 400px">
                 </div>
             </div>
-        </form>
 
-
-        <div class="row">
-            <div class="col-md-6 md-auto" style="position: relative">
-
+            <div class="row">
+                <div class="col-sm-12 md-auto">
+                    <label for="descripcionId">Descripcion</label>
+                    <input id="descripcionId" name="descripcionProducto" type="text" style="width: 400px">
+                </div>
             </div>
-            <div class="col-sm-6 md-auto" >
-                <a href="/examen/crearAuto/<%=id%>">
-                    <button class="btn-app" style="position:relative;top:50%; left:50%;" >Crear</button>
-                </a>
+
+            <div class="row">
+                <div class="col-sm-12 md-auto">
+                    <label for="precioId">Precio Producto</label>
+                    <input id="precioId" name="precioProducto" type="number" min="0" max="100" step="0.01">
+                </div>
             </div>
-        </div>
-    </div>
-    <br>
-    <br>
-</section>
 
-<!-- TABLA -->
-<section>
-    <div class="container" style="flex-wrap: wrap">
-        <div class="row">
-            <div class="col-md-6 md-auto">
-                <span style="font-size: 1.6em"> Datos del Auto</span>
+            <div class="row">
+                <div class="col-sm-12 md-auto">
+                    <label for="fechaLanzId">Fecha de lanzamiento</label>
+                    <input id="fechaLanzId" name="fechaLanzamientoProducto" type="date">
+                </div>
             </div>
-        </div><br>
 
-        <div class="row">
-            <table >
-                <tr>
+            <div class="row">
+                <div class="col-sm-12 md-auto">
+                    <label for="amiosGarantiaID">Años Garantia</label>
+                    <input id="amiosGarantiaID" name="aniosGarantiaProducto" type="number" min="0">
+                </div>
+            </div>
 
-                    <th>Chasis</th>
-                    <th>Marca</th>
-                    <th>Color Uno</th>
-                    <th>Color Dos</th>
-                    <th>Modelo</th>
-                    <th>Año</th>
-                    <th>Id Conductor</th>
-                    <th>Acciones</th>
-                </tr>
-                <% arregloAutos.forEach((autos)=>{ %>
-                    <tr>
+            <div class="row">
+                <div class="col-sm-12 md-auto">
+                    <label for="tiendaID">Id Tienda</label>
+                    <input id="tiendaID" name="tiendaId" type="number" min="0" value="<%=id%>">
+                </div>
+            </div>
 
-                        <td> <%= autos.chasis %> </td>
-                        <td> <%= autos.nombreMarca%> </td>
-                        <td> <%= autos.colorUno %> </td>
-                        <td> <%= autos.colorDos %> </td>
-                        <td> <%= autos.nombreModelo %> </td>
-                        <td> <%= autos.anio %></td>
-                        <td> <%= autos.conductorId %> </td>
-                        <td>
-                            <form action="/examen/eliminarAutos" method="post">
-                                <input id="idAuto" name="idAuto" type="number" value="<%= autos.id %>"hidden>
-                                <input id="idConductor" name="idConductor" type="number" value="<%= autos.conductorId %>" hidden >
-                                <button class="btn-app" style="width: 180px">Borrar</button>
-                            </form>
-                        </td>
-                    </tr>
-                <% }) %>
-            </table>
+            <div class="row">
+                <div class="col-sm-6 md-auto">
+                    <!--<a href="/examen/tienda/listaProductos">-->
+                        <button type="button">Cancelar</button>
+                    <!--</a>-->
+                </div>
+
+
+                <div class="col-sm-6 md-auto">
+                    <button>Enviar Informacion</button>
+                </div>
+            </div>
+            <!--   </form>
+        </form>-->
+
         </div>
     </div>
 
 </section>
-
 </body>
 </html>

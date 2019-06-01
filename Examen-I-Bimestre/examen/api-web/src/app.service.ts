@@ -86,6 +86,29 @@ export class AppService {
 
   }
 
+  buscarAutoMarca(marca: string, id:number) {
+    console.log('nombre:', marca);
+    const resultado=this.bddAutos.filter(
+        (auto)=>{
+          return auto.nombreMarca.includes(marca) && auto.conductorId===id ;
+        }
+    );
+    console.log('resultado:',resultado);
+    return resultado;
+
+
+  }
+
+  eliminarPorId(id:number):Autos[]{
+    console.log('id:', id);
+    const indice= this.bddAutos.findIndex(
+        (auto)=>{
+          return auto.id===id
+        }
+    );
+    this.bddAutos.splice(indice,1);
+    return this.bddAutos;
+  }
 
 
 }
