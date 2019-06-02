@@ -18,6 +18,8 @@ export class AppController {
     return res.render('inicio', {
       nombre: cookieUsuarioSegura.nombreUsuario
     })
+
+
   }
 
   //Lleva a la página de login de la aplicación
@@ -32,34 +34,44 @@ export class AppController {
     const cookieUsuarioSegura = req.signedCookies;
     const arregloConductores= this.appService.bddConductores;
 
-    res.render('conductores',{arregloConductores:arregloConductores,nombre:cookieUsuarioSegura.nombreUsuario});
+    if (cookieUsuarioSegura.nombreUsuario) {
+
+      res.render('conductores', {arregloConductores: arregloConductores, nombre: cookieUsuarioSegura.nombreUsuario});
+    }else {
+      return res.redirect('/examen/login');
+    }
     }
 
 //Lleva a la página que permite agregar un nuevo conductor
   @Get('/crear-conductores')
   getCrearConductores(@Response() res, @Request() req){
     const cookieUsuarioSegura = req.signedCookies;
-    return res.render('crear_conductores', {
-      nombre: cookieUsuarioSegura.nombreUsuario
-    });
+
+    return res.render('crear_conductores', {nombre: cookieUsuarioSegura.nombreUsuario});
   }
 
   //Genera la cookie segura con el nombre de usuario
   @Post('/login')
   postLogin(@Request() req, @Response() resp, @Headers() header, @Body('nombre') nombre: string) {
+    const cookieSeg = req.signedCookies;
+    if (!cookieSeg.nombreUsuario) {
 
-    const cookieUsuarioSegura = req.signedCookies;
-    if (!cookieUsuarioSegura.nombreUsuario) {
+      resp.cookie('nombreUsuario', nombre,{signed: true});
+      cookieSeg.nombreUsuario=nombre;
 
-      resp.cookie('nombreUsuario', nombre, {signed: true})
 
     }
+    if (cookieSeg.nombreUsuario) {
 
-    cookieUsuarioSegura.nombreUsuario = nombre;
-    resp.redirect('/examen/inicio')
+      resp.redirect('/examen/inicio');
+    }
+    else{
+      return resp.redirect('/examen/login');
+    }
+
   }
 
-  //Crea un nuevo conductor para ser añadido a la lista
+    //Crea un nuevo conductor para ser añadido a la lista
   @Post('/crearConductor')
   crearConductorPost(
       @Body() conductor:Conductores,

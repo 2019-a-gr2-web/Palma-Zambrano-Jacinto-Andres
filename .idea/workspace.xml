@@ -19,10 +19,23 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Examen-I-Bimestre/examen/api-web/src/app.controller.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="192" column="16" selection-start-line="192" selection-start-column="16" selection-end-line="192" selection-end-column="16" />
+            <state relative-caret-position="105">
+              <caret line="40" column="43" lean-forward="true" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
               <folding>
                 <element signature="e#0#124#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Examen-I-Bimestre/examen/api-web/views/login.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="725">
+              <caret line="53" selection-start-line="53" selection-end-line="53" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#div#0;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -137,7 +150,6 @@
         <option value="$PROJECT_DIR$/Examen-I-Bimestre/examen/api-web/src/main.ts" />
         <option value="$PROJECT_DIR$/01-http/02-servidor-nodejs/api-web/src/app.controller.ts" />
         <option value="$PROJECT_DIR$/01-http/02-servidor-nodejs/api-web/views/peliculas/academy.ejs" />
-        <option value="$PROJECT_DIR$/Examen-I-Bimestre/examen/api-web/views/login.ejs" />
         <option value="$PROJECT_DIR$/Examen-I-Bimestre/examen/api-web/src/conductores/conductores.ts" />
         <option value="$PROJECT_DIR$/Examen-I-Bimestre/examen/api-web/views/inicio.ejs" />
         <option value="$PROJECT_DIR$/Examen-I-Bimestre/examen/api-web/views/conductores.ejs" />
@@ -146,6 +158,7 @@
         <option value="$PROJECT_DIR$/Examen-I-Bimestre/examen/api-web/views/autos.ejs" />
         <option value="$PROJECT_DIR$/Examen-I-Bimestre/examen/api-web/views/crear_conductores.ejs" />
         <option value="$PROJECT_DIR$/Examen-I-Bimestre/examen/api-web/views/crear_autos.ejs" />
+        <option value="$PROJECT_DIR$/Examen-I-Bimestre/examen/api-web/views/login.ejs" />
         <option value="$PROJECT_DIR$/Examen-I-Bimestre/examen/api-web/src/app.controller.ts" />
       </list>
     </option>
@@ -184,6 +197,31 @@
               <item name="Examen-I-Bimestre" type="462c0819:PsiDirectoryNode" />
               <item name="examen" type="462c0819:PsiDirectoryNode" />
               <item name="api-web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Palma-Zambrano-Jacinto-Andres" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Palma-Zambrano-Jacinto-Andres" type="462c0819:PsiDirectoryNode" />
+              <item name="Examen-I-Bimestre" type="462c0819:PsiDirectoryNode" />
+              <item name="examen" type="462c0819:PsiDirectoryNode" />
+              <item name="api-web" type="462c0819:PsiDirectoryNode" />
+              <item name="publico" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Palma-Zambrano-Jacinto-Andres" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Palma-Zambrano-Jacinto-Andres" type="462c0819:PsiDirectoryNode" />
+              <item name="Examen-I-Bimestre" type="462c0819:PsiDirectoryNode" />
+              <item name="examen" type="462c0819:PsiDirectoryNode" />
+              <item name="api-web" type="462c0819:PsiDirectoryNode" />
+              <item name="publico" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Palma-Zambrano-Jacinto-Andres" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Palma-Zambrano-Jacinto-Andres" type="462c0819:PsiDirectoryNode" />
+              <item name="Examen-I-Bimestre" type="462c0819:PsiDirectoryNode" />
+              <item name="examen" type="462c0819:PsiDirectoryNode" />
+              <item name="api-web" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -248,17 +286,17 @@
       <workItem from="1559159320339" duration="2205000" />
       <workItem from="1559161574318" duration="47055000" />
       <workItem from="1559314495867" duration="30567000" />
-      <workItem from="1559436860984" duration="8302000" />
+      <workItem from="1559436860984" duration="10562000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="184178000" />
+    <option name="totallyTimeSpent" value="186438000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24032739" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.24032739" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -272,7 +310,7 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="9" weight="0.32941177" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.19663866" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.6252101" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -448,13 +486,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Examen-I-Bimestre/examen/api-web/views/login.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="37" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Examen-I-Bimestre/examen/api-web/src/conductores/conductores.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -555,10 +586,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Examen-I-Bimestre/examen/api-web/views/login.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="725">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#0;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Examen-I-Bimestre/examen/api-web/src/app.controller.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="192" column="16" selection-start-line="192" selection-start-column="16" selection-end-line="192" selection-end-column="16" />
+        <state relative-caret-position="105">
+          <caret line="40" column="43" lean-forward="true" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
           <folding>
             <element signature="e#0#124#0" expanded="true" />
           </folding>
