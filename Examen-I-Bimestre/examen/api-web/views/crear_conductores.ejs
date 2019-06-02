@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Crear Autos</title>
+    <title>Crear Conductores</title>
     <meta charset ="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -88,60 +88,60 @@
 <section>
     <h1 style="text-align: center">Formulario de Creación de Conductor</h1>
     <div class="container" >
-        <div class="mt-5 d-flex justify-content-center">
+
+        <form action="/examen/crearConductor" method="post">
+
             <form action="/examen/crearConductor" method="post">
 
-                <form action="/examen/crearConductor" method="post">
-
-                    <div class="row">
-                        <div class="col-sm-12 md-auto">
-                            <label for="nombresConductorId">Nombres </label>
-                            <input id="nombresConductorId" name="nombres" type="text" style="width: 400px">
-                        </div>
+                <div class="row">
+                    <div class="col-sm-12 md-auto">
+                        <label for="nombresConductorId">Nombres </label>
+                        <input id="nombresConductorId" name="nombres" type="text" style="width: 400px">
                     </div>
+                </div>
 
-                    <div class="row">
-                        <div class="col-sm-12 md-auto">
-                            <label for="apellidosId">Apellidos </label>
-                            <input id="nombreConductorId" name="apellidos" type="text" style="width: 400px">
-                        </div>
+                <div class="row">
+                    <div class="col-sm-12 md-auto">
+                        <label for="apellidosId">Apellidos </label>
+                        <input id="nombreConductorId" name="apellidos" type="text" style="width: 400px">
                     </div>
+                </div>
 
-                    <div class="row">
-                        <div class="col-sm-12 md-auto">
-                            <label for="fechaNacimientoId">Fecha de Nacimiento</label>
-                            <input id="fechaNacimientoId" name="fechaNacimiento" type="date" style="width: 300px">
-                        </div>
+                <div class="row">
+                    <div class="col-sm-12 md-auto">
+                        <label for="fechaNacimientoId">Fecha de Nacimiento</label>
+                        <input id="fechaNacimientoId" name="fechaNacimiento" type="date" style="width: 300px">
                     </div>
+                </div>
 
-                    <div class="row">
-                        <div class="col-sm-12 md-auto">
-                            <label for="numAutosId">Numero de Autos</label>
-                            <input id="numAutosId" name="numeroAutos" type="number" min="0" style="width: 330px">
-                        </div>
+                <div class="row">
+                    <div class="col-sm-12 md-auto">
+                        <label for="numAutosId">Numero de Autos</label>
+                        <input id="numAutosId" name="numeroAutos" type="number" min="0" style="width: 330px">
                     </div>
+                </div>
 
-                    <div class="row">
-                        <div class="col-sm-12 md-auto">
-                            <label for="LicenciaId">Licencia Valida</label>
-                            <input id="LicenciaId" name="licenciaValida" type="radio" >
-                        </div>
+                <div class="row">
+                    <div class="col-sm-12 md-auto">
+                        <label for="LicenciaId">Licencia Valida</label>
+                        <input id="LicenciaId" name="licenciaValida" type="radio" >
                     </div>
+                </div>
 
-                    <div class="row">
-                        <div class="col-sm-6 md-auto">
-                            <a href="/examen/conductores">
-                                <button class="btn-app" type="button" style="width: 180px">Cancelar</button>
-                            </a>
-                        </div>
-                        <div class="col-sm-6 md-auto">
-                            <button class="btn-app" type="submit" style="width: 180px">Enviar</button>
-                        </div>
+                <div class="row">
+                    <div class="col-sm-6 md-auto">
+                        <a href="/examen/conductores">
+                            <button class="btn-app" type="button" style="width: 180px">Cancelar</button>
+                        </a>
                     </div>
-                </form>
+                    <div class="col-sm-6 md-auto">
+                        <button class="btn-app" type="submit" style="width: 180px">Enviar</button>
+                    </div>
+                </div>
             </form>
-        </div>
+        </form>
     </div>
+
 </section>
 
 </body>

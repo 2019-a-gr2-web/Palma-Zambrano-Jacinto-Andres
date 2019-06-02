@@ -159,25 +159,27 @@ export class AppController {
 
   }
 
-/*
-    @Post('/crearProducto')
-    crearProductoPost(
-        @Body() A:Productos,
+
+    @Post('/crearAuto')
+    crearAutoPost(
+        @Body() auto:Autos,
         @Response() res,
         @Param() params,
         @Request() request
     ){
       const cookieSeg = request.signedCookies;
-      producto.precioProducto=Number(producto.precioProducto);
-      producto.numeroProducto=Number(producto.numeroProducto);
-      producto.aniosGarantiaProducto=Number(producto.aniosGarantiaProducto);
-      producto.tiendaId=Number(producto.tiendaId);
-      producto.fechaLanzamientoProducto =new Date(producto.fechaLanzamientoProducto);
-      console.log(producto);
-      this.productosService.crearProducto(producto);
+      auto.chasis=Number(auto.chasis);
+      auto.nombreMarca=String(auto.nombreMarca);
+      auto.colorUno=String(auto.colorUno);
+      auto.colorDos=String(auto.colorDos);
+      auto.nombreModelo=String(auto.nombreModelo);
+      auto.anio =Number(auto.anio);
+      auto.conductorId = Number(auto.conductorId);
+      console.log(auto);
+      this.appService.crearAuto(auto);
       if (cookieSeg.nombreUsuario) {
 
-        res.redirect('/examen/tienda/gestionarProductos/'+id);
+        res.redirect('/examen/autos/'+id);
 
       }
       else{
@@ -186,9 +188,9 @@ export class AppController {
 
 
     }
-    */
+
     @Post('eliminarAutos')
-    eliminarProducto(@Param() params,@Response() res,  @Body('conductorId') idConductor: number,
+    eliminarAuto(@Param() params,@Response() res,  @Body('conductorId') idConductor: number,
                      @Body('idAuto') idAuto: number, @Request() request) {
 
       const cookieSeg = request.signedCookies;
@@ -223,7 +225,7 @@ export class AppController {
 
 
     @Post('/buscarAuto')
-    buscarProducto(@Param() params,@Response() res,
+    buscarAuto(@Param() params,@Response() res,
                    @Body('busquedaAutos') busquedaAutos: string, @Request() request) {
       const cookieSeg = request.signedCookies;
       arregloAutoBusqueda=this.appService.buscarAutoMarca(busquedaAutos,id);
