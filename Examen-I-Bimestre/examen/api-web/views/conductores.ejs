@@ -161,7 +161,9 @@
                         <td> <%= conductor.numeroAutos %> </td>
                         <td> <%= conductor.licenciaValida %> </td>
                         <td>
+                            <a href="/examen/autos/<%=conductor.id%>">
                             <button class="btn-app" style="width: 180px">Gestionar Hijos</button>
+                            </a>
                             <br>
                             <form action="/examen/eliminarConductor" method="post">
                                 <input id="id" name="id" type="number" value="<%= conductor.id %>"  hidden >

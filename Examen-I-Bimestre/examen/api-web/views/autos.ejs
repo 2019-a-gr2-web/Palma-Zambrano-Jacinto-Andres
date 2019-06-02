@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Crear Conductores</title>
+    <title>Autos</title>
     <meta charset ="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,6 +38,15 @@
 
         .btn-app:hover{
             background-color: #993906;color:white;
+        }
+
+        table,tr,td, th{
+            border: solid black 1px;
+            text-align: center;
+
+        }
+        table{
+            width: 100%;
         }
 
     </style>
@@ -85,61 +94,85 @@
 
 </section>
 
+<!--Gestión del Aplicativo-->
 <section>
-    <h1 style="text-align: center">Formulario de Creación de Conductor</h1>
-    <div class="container" >
+    <div class="container" style="flex-wrap: wrap">
+        <form action="/examen/buscarAuto" method="POST">
+            <div class="row">
+                <div  class="col-md-6 md-auto" style="position: relative">
 
-        <form action="/examen/crearConductor" method="post">
+                    <label for="busquedaAutos" style="font-size: 1.8em;">Búsqueda</label>
+                    <input class="form-control" id="busquedaAutos" name="busquedaAutos" type="text" style="width: 540px">
 
-            <form action="/examen/crearConductor" method="post">
-
-                <div class="row">
-                    <div class="col-sm-12 md-auto">
-                        <label for="nombresConductorId">Nombres </label>
-                        <input id="nombresConductorId" name="nombres" type="text" style="width: 400px">
-                    </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-sm-12 md-auto">
-                        <label for="apellidosId">Apellidos </label>
-                        <input id="nombreConductorId" name="apellidos" type="text" style="width: 400px">
-                    </div>
-                </div>
+                <div class="col-md -6 md-auto">
 
-                <div class="row">
-                    <div class="col-sm-12 md-auto">
-                        <label for="fechaNacimientoId">Fecha de Nacimiento</label>
-                        <input id="fechaNacimientoId" name="fechaNacimiento" type="date" style="width: 300px">
-                    </div>
-                </div>
+                    <button class="btn-app" style="position:relative;top:50%; left:50%;">Buscar</button>
 
-                <div class="row">
-                    <div class="col-sm-12 md-auto">
-                        <label for="numAutosId">Numero de Autos</label>
-                        <input id="numAutosId" name="numeroAutos" type="number" min="0" style="width: 330px">
-                    </div>
                 </div>
-
-                <div class="row">
-                    <div class="col-sm-12 md-auto">
-                        <label for="LicenciaId">Licencia Valida</label>
-                        <input id="LicenciaId" name="licenciaValida" type="radio" >
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-6 md-auto">
-                        <a href="/examen/conductores">
-                            <button class="btn-app" type="button" style="width: 180px">Cancelar</button>
-                        </a>
-                    </div>
-                    <div class="col-sm-6 md-auto">
-                        <button class="btn-app" type="submit" style="width: 180px">Enviar</button>
-                    </div>
-                </div>
-            </form>
+            </div>
         </form>
+
+
+        <div class="row">
+            <div class="col-md-6 md-auto" style="position: relative">
+
+            </div>
+            <div class="col-sm-6 md-auto" >
+                <a href="/examen/crearAuto/<%=id%>">
+                    <button class="btn-app" style="position:relative;top:50%; left:50%;" >Crear</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+</section>
+
+<!-- TABLA -->
+<section>
+    <div class="container" style="flex-wrap: wrap">
+        <div class="row">
+            <div class="col-md-6 md-auto">
+                <span style="font-size: 1.6em"> Datos del Auto</span>
+            </div>
+        </div><br>
+
+        <div class="row">
+            <table >
+                <tr>
+
+                    <th>Chasis</th>
+                    <th>Marca</th>
+                    <th>Color Uno</th>
+                    <th>Color Dos</th>
+                    <th>Modelo</th>
+                    <th>Año</th>
+                    <th>Id Conductor</th>
+                    <th>Acciones</th>
+                </tr>
+                <% arregloAutos.forEach((autos)=>{ %>
+                    <tr>
+
+                        <td> <%= autos.chasis %> </td>
+                        <td> <%= autos.nombreMarca%> </td>
+                        <td> <%= autos.colorUno %> </td>
+                        <td> <%= autos.colorDos %> </td>
+                        <td> <%= autos.nombreModelo %> </td>
+                        <td> <%= autos.anio %></td>
+                        <td> <%= autos.conductorId %> </td>
+                        <td>
+                            <form action="/examen/eliminarAutos" method="post">
+                                <input id="idAuto" name="idAuto" type="number" value="<%= autos.id %>"hidden>
+                                <input id="idConductor" name="idConductor" type="number" value="<%= autos.conductorId %>" hidden >
+                                <button class="btn-app" style="width: 180px">Borrar</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }) %>
+            </table>
+        </div>
     </div>
 
 </section>
