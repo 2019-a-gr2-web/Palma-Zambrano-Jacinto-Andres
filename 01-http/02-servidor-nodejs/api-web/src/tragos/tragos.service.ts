@@ -94,4 +94,8 @@ export class TragosService {
         return this.bddTragos;
     }
 
+    buscar(parametrosBusqueda?):Promise<Trago[]>{
+        return this._tragosRepository.find(parametrosBusqueda)
+    }
+
 }

@@ -10,10 +10,10 @@ export class TragosController {
     }
 
     @Get('lista')
-    listarTragos(
+    async listarTragos(
         @Res() res
     ){
-        const arregloTragos = this._tragosService.bddTragos;
+        const arregloTragos = await this._tragosService.buscar();
         res.render('tragos/lista-tragos',{
             arregloTragos:arregloTragos
         })
