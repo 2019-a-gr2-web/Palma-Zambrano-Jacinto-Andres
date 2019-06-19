@@ -3,6 +3,8 @@ import {TragosController} from "./tragos.controller";
 import {TragosService} from "./tragos.service";
 import {TypeOrmModule} from "@nestjs/typeorm";
 import {TragosEntity} from "./tragos.entity";
+import{DistribuidorModule} from "../distribuidor/distribuidor.module";
+import{DistribuidorEntity} from "../distribuidor/distribuidor.entity";
 
 @Module({
     imports: [

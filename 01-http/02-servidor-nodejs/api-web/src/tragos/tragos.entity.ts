@@ -1,4 +1,6 @@
-import {Column, Entity, PrimaryGeneratedColumn} from "typeorm";
+import {Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn} from "typeorm";
+import {DistribuidorEntity} from "../distribuidor/distribuidor.entity";
+import{FiestaEntity} from "../fiesta/fiesta.entity";
 
 @Entity('bd_trago') // Nombre tabla
 export class TragosEntity {
@@ -29,6 +31,7 @@ export class TragosEntity {
     @Column({
         type: 'date',
         name: 'fecha_caducidad',
+        default: '2019-06-19'
     })
     fechaCaducidad: Date;
 
@@ -37,6 +40,13 @@ export class TragosEntity {
         precision: 10,
         scale:2,
         name: 'precio',
+        nullable: true
     })
     precio: number;
+
+    @ManyToOne(type => DistribuidorEntity, distribuidor =>distribuidor.tragos)
+    distribuidorId: DistribuidorEntity;
+
+    @OneToMany( type => FiestaEntity, fiesta => fiesta)
+    fiestas: FiestaEntity[]
 }
