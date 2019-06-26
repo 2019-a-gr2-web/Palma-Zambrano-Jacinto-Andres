@@ -36,7 +36,7 @@ export class TragosController {
         @Session() session,
         @Res() res
     ){
-        if(usuario.username === 'adrian' && usuario.password === '12345678'){
+        if(usuario.username === 'jacinto' && usuario.password === '12345678'){
             //    QUE HACEMOS
             session.username = usuario.username;
             res.redirect('/api/traguito/protegida');
