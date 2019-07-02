@@ -55,12 +55,15 @@ export class TragosService {
         return this._tragosRepository.save(objetoEntidad); // Se convierte en la promesa
     }
 
-    buscarPorId(id: number):Trago {
+    buscarPorId2(id: number):Trago {
         return this.bddTragos.find(
             (trago) => {
                 return trago.id === id;
             }
         );
+    }
+    buscarPorId(idTrago: number): Promise<TragosEntity> {
+        return this._tragosRepository.findOne(idTrago);
     }
 
     buscarPorNombre(nombre: string):Trago {
@@ -81,7 +84,7 @@ export class TragosService {
         return this.bddTragos;
     }
 
-    actualizar(tragoActualizado: Trago, id:number):Trago[] {
+    /*actualizar(tragoActualizado: Trago, id:number):Trago[] {
 
         const indice = this.bddTragos.findIndex(
             (trago) => {
@@ -92,10 +95,20 @@ export class TragosService {
         this.bddTragos[indice] = tragoActualizado;
 
         return this.bddTragos;
-    }
+    }*/
 
     buscar(parametrosBusqueda?):Promise<Trago[]>{
         return this._tragosRepository.find(parametrosBusqueda)
+    }
+
+    actualizar(idTrago: number,
+               nuevoTrago: Trago): Promise<TragosEntity> {
+
+        nuevoTrago.id = idTrago;
+
+        const tragoEntity = this._tragosRepository.create(nuevoTrago);
+
+        return this._tragosRepository.save(tragoEntity);
     }
 
 }
