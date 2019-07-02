@@ -5,28 +5,41 @@
 <%if (existeMensaje){%>
     <p>ERROR EN FORMULARIO..!!!</p>
 <%}%>
+<% const arreglo = ['Ron', 'Vodka', 'Tequila', 'Whiskey', 'Puntas', 'Cervezas'] %>
+<% const arregloValues = ['Roncito', 'Vodkita', 'Tequilita', 'Whiskicito', 'Puntitas', 'Chelitas'] %>
+<% var creando = typeof trago === "undefined" ? true : false; %>
+<h1> <%= creando ? 'Crear' : 'Actualizar' %> Trago</h1>
+<p><%= creando ? 'Creando' : 'Actualizando' %> un trago.</p>
 
-<h1>Formulario de Creación</h1>
-<p>Crea un nuevo trago.</p>
+
 <form
-        action="/api/traguito/crear"
+        action="/api/traguito/<%= creando ? 'crear' : 'actualizar' %>-trago/<%= creando ? '' : trago.id %>"
         method="post"
 >
 
     <label for="nombreId">Nombre</label>
     <input id="nombreId"
            name="nombre"
-           type="text">
+           type="text"
+           value="<%= creando ? '' : trago.nombre %>">
     <br>
 
     <label for="tipoId">Tipo trago</label>
     <select name="tipo" id="tipoId">
-        <option value="Ron">Roncito</option>
-        <option value="Vodka">Vodkita</option>
-        <option value="Tequila">Tequilita</option>
-        <option value="Whiskey" selected>Whiskycito</option>
-        <option value="Puntas">Puntitas</option>
-        <option value="Cerveza">Chelitas</option>
+        <% if(creando){ %>
+            <% arreglo.forEach((opcion)=>{ %>
+                <option value="<%= opcion %>">
+                    <%= opcion %></option>
+            <% }) %>
+        <% }else{ %>
+            <% arreglo.forEach((opcion)=>{ %>
+                <option value="<%= opcion %>"
+                <% if(trago.tipo.toString() == opcion){ %>
+                        selected
+                        <% } %>
+                ><%= opcion %></option>
+            <% }) %>
+        <% } %>
     </select>
     <br>
 
@@ -37,6 +50,7 @@
            min="0"
            max="100"
            step="0.01"
+           value="<%= creando ? '' : trago.gradosAlcohol %>"
     >
     <br>
 
@@ -44,6 +58,7 @@
     <input id="fechaCaducidadId"
            name="fechaCaducidad"
            type="date"
+           value="<%= creando ? '' : trago.fechaCaducidad %>"
     >
     <br>
 
@@ -53,6 +68,7 @@
            type="number"
            min="0"
            step="0.01"
+           value="<%= creando ? '' : trago.precio %>"
     >
     <br>
 

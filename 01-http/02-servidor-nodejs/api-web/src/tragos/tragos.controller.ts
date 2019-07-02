@@ -1,8 +1,9 @@
-import {Controller, Get, Post, Res, Body, Query, Session} from "@nestjs/common";
+import {Controller, Get, Post, Res, Body, Query, Session, Param} from "@nestjs/common";
 import {TragosService} from "./tragos.service";
 import {Trago} from "./interfaces/trago";
 import {TragosCreateDto} from "./DTO/tragos.create.dto";
 import {validate} from "class-validator";
+import {TragosEntity} from "./tragos.entity";
 
 @Controller('/api/traguito')
 export class TragosController {
@@ -36,7 +37,7 @@ export class TragosController {
         @Session() session,
         @Res() res
     ){
-        if(usuario.username === 'adrian' && usuario.password === '12345678'){
+        if(usuario.username === 'jacinto' && usuario.password === '12345678'){
             //    QUE HACEMOS
             session.username = usuario.username;
             res.redirect('/api/traguito/protegida');
@@ -130,4 +131,46 @@ export class TragosController {
 
     }
 
+    @Get('editar/:id')
+    async actualizarTrago(
+        @Param('id') id: string,
+        @Res() response,
+        @Query('mensaje') mensaje:string
+    ) {
+
+        console.log(Number(id));
+        const tragoAActualizar = await this
+            ._tragosService
+            .buscarPorId(Number(id));
+        console.log('trago', tragoAActualizar.nombre);
+
+        return response.render(
+            'tragos/crear-editar',
+            {
+                mensaje: mensaje,
+                trago: tragoAActualizar
+            })
+
+
+
+    }
+
+    @Post('actualizar-trago/:id')
+    async actualizarTragoForm(
+        @Param('id') id: string,
+        @Res() response,
+        @Body() trago: Trago
+    ) {
+        trago.id = +id;
+
+        await this._tragosService.actualizar(+id, trago);
+
+
+
+        response.redirect('/api/traguito/lista');
+
+    }
+
+
 }
+let id: number;
