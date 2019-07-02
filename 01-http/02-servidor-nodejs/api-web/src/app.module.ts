@@ -8,9 +8,10 @@ import {DistribuidorEntity} from "./distribuidor/distribuidor.entity";
 import {DistribuidorModule} from "./distribuidor/distribuidor.module";
 import {FiestaModule} from "./fiesta/fiesta.module";
 import {FiestaEntity} from "./fiesta/fiesta.entity";
+import {ChatModule} from "./chat/chat.module";
 
 @Module({
-  imports: [TragosModule,DistribuidorModule,FiestaModule,
+  imports: [/*TragosModule,DistribuidorModule,FiestaModule,
     TypeOrmModule.forRoot({
       name: 'default', // Nombre cadena conex por defecto de TYPEORM
       type: 'mysql',
@@ -24,7 +25,10 @@ import {FiestaEntity} from "./fiesta/fiesta.entity";
       ],
       synchronize: true,
      // insecureAuth : true
-    }),],//Modulos
+    }),*/
+  ChatModule
+  ],//Modulos
+
   controllers: [AppController],
   providers: [AppService],
 })

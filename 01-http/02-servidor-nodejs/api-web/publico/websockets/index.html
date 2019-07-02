@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Websockets</title>
+</head>
+<body>
+
+	<script src="socket.io.js"></script>
+	<script>
+		//Como conectarse a la IP y al puerto
+		const url = 'http://localhost:3002/websockets';
+		const socket = io(url);
+		console.log('Ya mismito nos conectamos :D')
+		socket.on(
+		    'connect', //nombre del evento
+			()=>{
+		        console.log('Estamos conectados!!')
+				//socket.disconnect(); permite desconectarse
+		  
+			}
+		);
+		socket.on(
+		    'disconnect',
+			()=>{
+                console.log(' Ayñ :c Estamos desconectados !!')
+			}
+		);
+		
+		function peticionHolaMundo(){
+            const nombreMetodo = 'Hola mundo';
+			const datos ='Jacinto';
+		    socket.emit(
+                nombreMetodo,
+                datos,
+                (respuesta)=>{
+                    console.log(respuesta);
+                }
+            );
+		}
+	</script>
+
+
+</body>
+</html>
