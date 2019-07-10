@@ -3,41 +3,114 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Websockets</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
+
+<h1 id="titulo">Chat EPN</h1>
+
+<p class="par">Primero</p>
+<p class="par">Segundo</p>
+
+<div id="contenedor-chat">
+
+</div>
+
+<label for="chat-texto">Texto</label>
+<input id="chat-texto" type="text">
+
+<button onclick="enviarMensaje()">Anadir chat</button>
+
+<script>
+    const titulo = document.getElementById('titulo');
+    titulo.style.backgroundColor = 'green';
+    titulo.onclick = () => {
+        console.log('Diste click al titulo ;( ');
+    };
+    function clickParrafo(){
+        alert('CUIDADO!!!');
+    }
+    function enviarMensaje() {
+        const chatTexto = document.getElementById('chat-texto');
+        const texto = chatTexto.value;
+        console.log(texto);
+        const idContenedor = 'contenedor-chat';
+        const nombreEtiquetaHTMLChat = "p";
+        const parrafo = document
+            .createElement(nombreEtiquetaHTMLChat);
+        const contenidoHTML = `
+        <div class="alert alert-primary text-right" role="alert">
+          ${texto}
+        </div>
+        `;
+        parrafo.innerHTML = contenidoHTML;
+        anadirEtiqueta(idContenedor, parrafo);
+        peticionHolaMundo(texto);
+        chatTexto.value = "";
+        chatTexto.focus();
+    }
+
+    function anadirEtiqueta(idEtiqueta, elementoHTML) {
+        const etiqueta = document.getElementById(idEtiqueta);
+        etiqueta.appendChild(elementoHTML);
+    }
+	
+	
+	
+ 
+	
+</script>
 
 	<script src="socket.io.js"></script>
 	<script>
 		//Como conectarse a la IP y al puerto
-		const url = 'http://localhost:3002/websockets';
-		const socket = io(url);
-		console.log('Ya mismito nos conectamos :D')
-		socket.on(
-		    'connect', //nombre del evento
-			()=>{
-		        console.log('Estamos conectados!!')
-				//socket.disconnect(); permite desconectarse
-		  
-			}
-		);
-		socket.on(
-		    'disconnect',
-			()=>{
-                console.log(' Ayñ :c Estamos desconectados !!')
-			}
-		);
-		
-		function peticionHolaMundo(){
-            const nombreMetodo = 'Hola mundo';
-			const datos ='Jacinto';
-		    socket.emit(
+        const url = 'http://localhost:3002/websockets';
+        const socket = io(url);
+        console.log('Ya mismito nos conectamos :D');
+        socket.on(
+            'connect', // nombre del evento
+            () => {
+                console.log('Estamos conectados!!');
+                //socket.disconnect();
+                //socket.connect();
+            }
+        );
+        socket.on(
+            'disconnect', // nombre del evento
+            () => {
+                console.log('=( nos desconectamos.');
+            }
+        );
+        socket.on(
+            'saludaron', // nombre del evento
+            (data) => {
+                console.log('Nos saludaron.', data);
+                const nombreContenedor = 'contenedor-chat';
+                const nombreEtiqueta= 'p';
+                const parrafo = document
+                    .createElement(nombreEtiqueta);
+                const HTMLParrafo = `
+            <div class="alert alert-secondary" role="alert">
+              ${data.nombre}
+            </div>
+            `;
+                parrafo.innerHTML = HTMLParrafo;
+                anadirEtiqueta(nombreContenedor,parrafo);
+            }
+        );
+        function peticionHolaMundo(texto) {
+            const nombreMetodo = 'holaMundo';
+            const datos = {
+                nombre: texto
+            };
+            socket.emit(
                 nombreMetodo,
                 datos,
-                (respuesta)=>{
+                (respuesta) => { //calback
                     console.log(respuesta);
                 }
             );
-		}
+        }
 	</script>
 
 
